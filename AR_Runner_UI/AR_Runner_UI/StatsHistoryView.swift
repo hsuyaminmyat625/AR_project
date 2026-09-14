@@ -4,6 +4,7 @@ import SwiftUI
 struct StatsView: View {
     let onHistory: () -> Void
     let onBack: () -> Void
+    let onFinish: () -> Void
 
     var body: some View {
         ARScreen {
@@ -99,7 +100,7 @@ struct StatsView: View {
                         // Buttons
                         VStack(spacing: 10) {
                             ARButton("履歴を見る", icon: "clock.arrow.circlepath") { onHistory() }
-                            ARButton("終了", style: .secondary) { onBack() }
+                            ARButton("終了", style: .secondary) { onFinish() }
                         }
                         .padding(.horizontal, 24)
                         .padding(.bottom, 52)

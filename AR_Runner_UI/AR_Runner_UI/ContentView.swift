@@ -7,6 +7,7 @@ enum AppScreen {
     case deviceConnect
     case runningSettings
     case mapRoute
+    case courseRunning
     case lockScreen
     case stats
     case history
@@ -15,7 +16,7 @@ enum AppScreen {
 struct ContentView: View {
     private static let onboardingCompletionKey = "hasCompletedOnboarding"
     @State private var screen: AppScreen
-    
+
     init() {
         _screen = State(
             initialValue: UserDefaults.standard.bool(forKey: Self.onboardingCompletionKey)
@@ -23,9 +24,6 @@ struct ContentView: View {
             : .onboarding
         )
     }
-    
-//struct ContentView: View {
-    //@State private var screen: AppScreen = .onboarding
 
     var body: some View {
         ZStack {
@@ -39,14 +37,14 @@ struct ContentView: View {
                     onNext: { screen = .home },
                     onBack: { }
                 )
+
             // add on
             case .home:
                 HomeView(
                     onNext: { screen = .deviceConnect },
                     onBack: { }
                 )
-                
-                
+
             // 2. Connect AR glasses + Apple Watch + AirPods
             case .deviceConnect:
                 DeviceConnectView(
@@ -64,17 +62,23 @@ struct ContentView: View {
             // 4. Draw route on map
             case .mapRoute:
                 MapRouteView(
-                    onStart: { screen = .lockScreen }, // Routes back to Lock Screen
-                    onBack: { screen = .runningSettings }
+                    onNext: { screen = .lockScreen },
+                    onBack: { screen = .deviceConnect }
+                    // pastRoutes: defaults to [] until real route history data exists
                 )
 
-
+            // 4. Live running screen (HUD: elapsed time, distance, bpm, pace, sync rate)
+            case .courseRunning:
+                RunningView(
+                    onEnd: { screen = .stats }
+                )
 
             // 7. Stats
             case .stats:
                 StatsView(
                     onHistory: { screen = .history },
-                    onBack: { screen = .lockScreen }
+                    onBack: { screen = .lockScreen },   // 戻る → lock screen
+                    onFinish: { screen = .home }        // 終了 → home
                 )
 
             // 8. History
@@ -82,10 +86,12 @@ struct ContentView: View {
                 HistoryView(
                     onBack: { screen = .home }
                 )
+
             case .lockScreen:
-                        LockScreenView(
-                            onUnlock: { screen = .stats }
-                        )
+                LockScreenView(
+                    onUnlock: { screen = .stats },
+                    onEnd: { screen = .stats }
+                )
             }
         }
         .animation(.easeInOut(duration: 0.3), value: screen)
