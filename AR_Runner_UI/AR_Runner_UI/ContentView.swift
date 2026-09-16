@@ -89,7 +89,7 @@ struct ContentView: View {
 
             case .lockScreen:
                 LockScreenView(
-                    onUnlock: { screen = .stats },
+                    onUnlock: { screen = .courseRunning },
                     onEnd: { screen = .stats }
                 )
             }
