@@ -69,6 +69,11 @@ struct MapRouteView: View {
                             RoundedRectangle(cornerRadius: 24)
                                 .stroke(Color.arBorder, lineWidth: 1)
                         )
+                        .overlay {
+                            if locationManager.isPermissionDenied {
+                                LocationPermissionMessage()
+                            }
+                        }
                         .padding(.horizontal, 24)
                         .onAppear { locationManager.start() }
 
@@ -200,16 +205,23 @@ private struct RouteThumbnail: View {
 
 private final class MapRouteLocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var cameraPosition: MapCameraPosition = .automatic
+    @Published private(set) var authorizationStatus: CLAuthorizationStatus
 
     private let manager = CLLocationManager()
 
     override init() {
+        authorizationStatus = manager.authorizationStatus
         super.init()
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
     }
 
+    var isPermissionDenied: Bool {
+        authorizationStatus == .denied || authorizationStatus == .restricted
+    }
+
     func start() {
+        authorizationStatus = manager.authorizationStatus
         switch manager.authorizationStatus {
         case .notDetermined:
             manager.requestWhenInUseAuthorization()
@@ -221,6 +233,7 @@ private final class MapRouteLocationManager: NSObject, ObservableObject, CLLocat
     }
 
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        authorizationStatus = manager.authorizationStatus
         if manager.authorizationStatus == .authorizedWhenInUse
             || manager.authorizationStatus == .authorizedAlways {
             manager.startUpdatingLocation()
