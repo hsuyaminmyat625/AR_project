@@ -2,12 +2,9 @@ import SwiftUI
 
 // MARK: - Running Settings Screen
 struct RunningSettingsView: View {
+    @Binding var configuration: RunConfiguration
     let onNext: () -> Void
     let onBack: () -> Void
-
-    @State private var timeSeconds: Int = 3600
-    @State private var distanceKm: Double = 10.0
-    @State private var paceKmh: Double = 8.0
 
     @State private var editingTime = false
     @State private var editingDistance = false
@@ -21,9 +18,9 @@ struct RunningSettingsView: View {
     enum Field { case time, distance, pace }
 
     var timeDisplay: String {
-        let h = timeSeconds / 3600
-        let m = (timeSeconds % 3600) / 60
-        let s = timeSeconds % 60
+        let h = configuration.durationSeconds / 3600
+        let m = (configuration.durationSeconds % 3600) / 60
+        let s = configuration.durationSeconds % 60
         return String(format: "%02d:%02d:%02d", h, m, s)
     }
 
@@ -64,8 +61,8 @@ struct RunningSettingsView: View {
                         inputText: $timeInput,
                         isEditing: $editingTime,
                         isFocused: focusedField == .time,
-                        onMinus: { timeSeconds = max(60, timeSeconds - 60) },
-                        onPlus: { timeSeconds = min(86400, timeSeconds + 60) },
+                        onMinus: { configuration.durationSeconds = max(60, configuration.durationSeconds - 60) },
+                        onPlus: { configuration.durationSeconds = min(86400, configuration.durationSeconds + 60) },
                         onTapValue: {
                             timeInput = timeDisplay
                             editingTime = true
@@ -84,21 +81,23 @@ struct RunningSettingsView: View {
                     SettingCard(
                         icon: "mappin.and.ellipse",
                         label: "距離",
-                        displayValue: String(format: "%.2f km", distanceKm),
+                        displayValue: String(format: "%.2f km", configuration.distanceKm),
                         inputText: $distanceInput,
                         isEditing: $editingDistance,
                         isFocused: focusedField == .distance,
-                        onMinus: { distanceKm = max(0.5, round((distanceKm - 0.5) * 100) / 100) },
-                        onPlus: { distanceKm = min(200.0, round((distanceKm + 0.5) * 100) / 100) },
+                        onMinus: { configuration.distanceKm = max(0.5, round((configuration.distanceKm - 0.5) * 100) / 100) },
+                        onPlus: { configuration.distanceKm = min(200.0, round((configuration.distanceKm + 0.5) * 100) / 100) },
                         onTapValue: {
-                            distanceInput = String(format: "%.2f", distanceKm)
+                            distanceInput = String(format: "%.2f", configuration.distanceKm)
                             editingDistance = true
                             editingTime = false
                             editingPace = false
                             focusedField = .distance
                         },
                         onCommit: {
-                            if let v = Double(distanceInput), v > 0 { distanceKm = min(200.0, max(0.5, v)) }
+                            if let v = Double(distanceInput), v > 0 {
+                                configuration.distanceKm = min(200.0, max(0.5, v))
+                            }
                             editingDistance = false
                             focusedField = nil
                         }
@@ -108,21 +107,23 @@ struct RunningSettingsView: View {
                     SettingCard(
                         icon: "speedometer",
                         label: "ペース（速度）",
-                        displayValue: String(format: "%.1f km/h", paceKmh),
+                        displayValue: String(format: "%.1f km/h", configuration.paceKmh),
                         inputText: $paceInput,
                         isEditing: $editingPace,
                         isFocused: focusedField == .pace,
-                        onMinus: { paceKmh = max(1.0, round((paceKmh - 0.5) * 10) / 10) },
-                        onPlus: { paceKmh = min(30.0, round((paceKmh + 0.5) * 10) / 10) },
+                        onMinus: { configuration.paceKmh = max(1.0, round((configuration.paceKmh - 0.5) * 10) / 10) },
+                        onPlus: { configuration.paceKmh = min(30.0, round((configuration.paceKmh + 0.5) * 10) / 10) },
                         onTapValue: {
-                            paceInput = String(format: "%.1f", paceKmh)
+                            paceInput = String(format: "%.1f", configuration.paceKmh)
                             editingPace = true
                             editingTime = false
                             editingDistance = false
                             focusedField = .pace
                         },
                         onCommit: {
-                            if let v = Double(paceInput), v > 0 { paceKmh = min(30.0, max(1.0, v)) }
+                            if let v = Double(paceInput), v > 0 {
+                                configuration.paceKmh = min(30.0, max(1.0, v))
+                            }
                             editingPace = false
                             focusedField = nil
                         }
@@ -133,7 +134,11 @@ struct RunningSettingsView: View {
                 Spacer()
 
                 // Next button
-                Button(action: onNext) {
+                Button {
+                    // Commit a value even when the keyboard is still open.
+                    finishEditing()
+                    onNext()
+                } label: {
                     ZStack {
                         Circle()
                             .fill(Color.arYellow)
@@ -156,13 +161,43 @@ struct RunningSettingsView: View {
         }
     }
 
+    private func finishEditing() {
+        switch focusedField {
+        case .time:
+            applyTimeInput()
+        case .distance:
+            applyDistanceInput()
+        case .pace:
+            applyPaceInput()
+        case nil:
+            break
+        }
+
+        editingTime = false
+        editingDistance = false
+        editingPace = false
+        focusedField = nil
+    }
+
     private func applyTimeInput() {
         let parts = timeInput.split(separator: ":").map { Int($0) ?? 0 }
         switch parts.count {
-        case 3: timeSeconds = max(60, parts[0] * 3600 + parts[1] * 60 + parts[2])
-        case 2: timeSeconds = max(60, parts[0] * 60 + parts[1])
-        case 1: timeSeconds = max(60, parts[0] * 60)
+        case 3: configuration.durationSeconds = max(60, parts[0] * 3600 + parts[1] * 60 + parts[2])
+        case 2: configuration.durationSeconds = max(60, parts[0] * 60 + parts[1])
+        case 1: configuration.durationSeconds = max(60, parts[0] * 60)
         default: break
+        }
+    }
+
+    private func applyDistanceInput() {
+        if let value = Double(distanceInput), value > 0 {
+            configuration.distanceKm = min(200.0, max(0.5, value))
+        }
+    }
+
+    private func applyPaceInput() {
+        if let value = Double(paceInput), value > 0 {
+            configuration.paceKmh = min(30.0, max(1.0, value))
         }
     }
 }

@@ -16,6 +16,7 @@ enum AppScreen {
 struct ContentView: View {
     private static let onboardingCompletionKey = "hasCompletedOnboarding"
     @State private var screen: AppScreen
+    @State private var runConfiguration = RunConfiguration()
 
     init() {
         _screen = State(
@@ -55,6 +56,7 @@ struct ContentView: View {
             // 3. Set time, distance, pace
             case .runningSettings:
                 RunningSettingsView(
+                    configuration: $runConfiguration,
                     onNext: { screen = .mapRoute },
                     onBack: { screen = .deviceConnect }
                 )
@@ -70,6 +72,7 @@ struct ContentView: View {
             // 4. Live running screen (HUD: elapsed time, distance, bpm, pace, sync rate)
             case .courseRunning:
                 RunningView(
+                    configuration: runConfiguration,
                     onEnd: { screen = .stats }
                 )
 

@@ -125,18 +125,24 @@ struct CourseSetupView: View {
 
 // MARK: - 4. Running Screen
 struct RunningView: View {
+    let configuration: RunConfiguration
     let onEnd: () -> Void
     @State private var elapsed = 0
     @State private var distance = 0.0
     @State private var bpm = 142
-    @State private var pace = "5'24\""
     @State private var syncRate = 87
     @State private var showEndAlert = false
+    @State private var didEnd = false
 
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     var elapsedStr: String {
         String(format: "%02d:%02d", elapsed / 60, elapsed % 60)
+    }
+
+    var paceDisplay: String {
+        let totalSeconds = Int((60.0 / configuration.paceKmh * 60.0).rounded())
+        return String(format: "%d'%02d\"", totalSeconds / 60, totalSeconds % 60)
     }
 
     var body: some View {
@@ -222,7 +228,7 @@ struct RunningView: View {
                             .frame(maxWidth: .infinity)
 
                             VStack(spacing: 3) {
-                                Text(pace)
+                                Text(paceDisplay)
                                     .font(.system(size: 30, weight: .bold, design: .monospaced))
                                     .foregroundColor(.arYellow)
                                 Text("ペース /km")
@@ -267,8 +273,19 @@ struct RunningView: View {
             }
             .ignoresSafeArea()
             .onReceive(timer) { _ in
+                guard !didEnd else { return }
+
+                guard elapsed < configuration.durationSeconds else {
+                    didEnd = true
+                    onEnd()
+                    return
+                }
+
                 elapsed += 1
-                distance += 0.0028
+                distance = min(
+                    configuration.distanceKm,
+                    distance + configuration.paceKmh / 3600.0
+                )
                 bpm = Int.random(in: 138...148)
             }
             .alert("ランを終了しますか？", isPresented: $showEndAlert) {
