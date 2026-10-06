@@ -2,10 +2,8 @@ import SwiftUI
 
 // MARK: - AR Lock Screen
 // Pure black screen shown while running on AR glasses.
-// Swipe up to unlock and return to the running HUD.
-// A stop button lets the user end the run directly from here too.
+// Swipe up to show a confirmation prompt asking whether to end the run.
 struct LockScreenView: View {
-    let onUnlock: () -> Void
     let onEnd: () -> Void
 
     @State private var dragOffset: CGFloat = 0
@@ -81,24 +79,6 @@ struct LockScreenView: View {
                         .transition(.opacity)
                 }
             }
-
-            // Stop button, floating top-right
-            VStack {
-                HStack {
-                    Spacer()
-                    Button { showEndAlert = true } label: {
-                        Image(systemName: "stop.fill")
-                            .font(.system(size: 15, weight: .bold))
-                            .foregroundColor(.white)
-                            .frame(width: 42, height: 42)
-                            .background(.ultraThinMaterial, in: Circle())
-                            .overlay(Circle().strokeBorder(Color.arBorder, lineWidth: 1))
-                    }
-                    .padding(.trailing, 20)
-                    .padding(.top, 60)
-                }
-                Spacer()
-            }
         }
         .gesture(
             DragGesture(minimumDistance: 10)
@@ -112,19 +92,12 @@ struct LockScreenView: View {
                 .onEnded { value in
                     let translation = -value.translation.height
                     if translation > unlockThreshold {
-                        // Unlock!
-                        withAnimation(.easeOut(duration: 0.2)) {
-                            unlocking = true
-                            dragOffset = unlockThreshold + 20
-                        }
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                            onUnlock()
-                        }
-                    } else {
-                        // Snap back
-                        withAnimation(.spring(response: 0.35, dampingFraction: 0.7)) {
-                            dragOffset = 0
-                        }
+                        // Swiped far enough — ask for confirmation before ending the run
+                        showEndAlert = true
+                    }
+                    // Always snap back; the alert (not the swipe itself) decides what happens next
+                    withAnimation(.spring(response: 0.35, dampingFraction: 0.7)) {
+                        dragOffset = 0
                     }
                 }
         )

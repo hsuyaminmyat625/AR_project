@@ -15,4 +15,6 @@ enum AppScreen {
     case lockScreen
     case stats
     case history
+    case glassSettings
+    case phoneSettings
 }
