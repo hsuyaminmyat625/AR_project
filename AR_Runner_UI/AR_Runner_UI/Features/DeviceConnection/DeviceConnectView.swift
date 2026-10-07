@@ -29,11 +29,11 @@ struct DeviceConnectView: View {
 
                 // Header
                 VStack(alignment: .leading, spacing: 4) {
-                    ARLabel(text: "SETUP")
-                    Text("デバイスを接続")
+                    ARLabel(text: AppStrings.Devices.setupEyebrow)
+                    Text(AppStrings.Devices.title)
                         .font(.system(size: 30, weight: .bold))
                         .foregroundColor(.white)
-                    Text("使用するデバイスを接続してください")
+                    Text(AppStrings.Devices.subtitle)
                         .font(.system(size: 14))
                         .foregroundColor(.arGrayText)
                         .padding(.top, 2)
@@ -46,8 +46,8 @@ struct DeviceConnectView: View {
                 VStack(spacing: 12) {
                     DeviceConnectRow(
                         icon: "eyeglasses",
-                        name: "ARグラス",
-                        subtitle: "XREAL One",
+                        name: AppStrings.Devices.arGlasses,
+                        subtitle: AppStrings.Devices.xrealOne,
                         isConnected: $arConnected,
                         isScanning: $arScanning,
                         onConnect: {
@@ -60,8 +60,8 @@ struct DeviceConnectView: View {
                     )
                     DeviceConnectRow(
                         icon: "applewatch",
-                        name: "Apple Watch",
-                        subtitle: "Series / Ultra",
+                        name: AppStrings.Devices.appleWatch,
+                        subtitle: AppStrings.Devices.seriesUltra,
                         isConnected: $watchConnected,
                         isScanning: $watchScanning,
                         onConnect: {
@@ -74,8 +74,8 @@ struct DeviceConnectView: View {
                     )
                     DeviceConnectRow(
                         icon: "airpodspro",
-                        name: "AirPods",
-                        subtitle: "Pro / Max",
+                        name: AppStrings.Devices.airPods,
+                        subtitle: AppStrings.Devices.proMax,
                         isConnected: $airPodsConnected,
                         isScanning: $airPodsScanning,
                         onConnect: {
@@ -93,7 +93,7 @@ struct DeviceConnectView: View {
 
                 // Status hint
                 if !allConnected {
-                    Text("デバイスをタップして接続、またはスキップ")
+                    Text(AppStrings.Devices.tapToConnect)
                         .font(.system(size: 13))
                         .foregroundColor(.arGrayText)
                         .padding(.bottom, 16)
@@ -120,8 +120,8 @@ struct DeviceConnectView: View {
 // MARK: - Device Connect Row
 struct DeviceConnectRow: View {
     let icon: String
-    let name: String
-    let subtitle: String
+    let name: LocalizedStringKey
+    let subtitle: LocalizedStringKey
     @Binding var isConnected: Bool
     @Binding var isScanning: Bool
     let onConnect: () -> Void
@@ -157,14 +157,14 @@ struct DeviceConnectRow: View {
                             Image(systemName: "checkmark.circle.fill")
                                 .font(.system(size: 11))
                                 .foregroundColor(.arYellow)
-                            Text("接続済み")
+                            Text(AppStrings.Devices.connected)
                                 .font(.system(size: 13))
                                 .foregroundColor(.arYellow)
                         } else if isScanning {
                             ProgressView()
                                 .scaleEffect(0.7)
                                 .tint(Color.arGrayText)
-                            Text("接続中...")
+                            Text(AppStrings.Devices.connecting)
                                 .font(.system(size: 13))
                                 .foregroundColor(.arGrayText)
                         } else {
@@ -186,7 +186,7 @@ struct DeviceConnectRow: View {
                         .background(Color.arYellow)
                         .clipShape(Circle())
                 } else {
-                    Text(isScanning ? "..." : "接続")
+                    Text(isScanning ? AppStrings.Common.ellipsis : AppStrings.Common.connect)
                         .font(.system(size: 12, weight: .semibold))
                         .foregroundColor(isScanning ? .arGrayText : .arYellow)
                         .padding(.horizontal, 12)

@@ -38,11 +38,11 @@ struct RunningSettingsView: View {
 
                 // Header
                 VStack(alignment: .leading, spacing: 4) {
-                    ARLabel(text: "SETTINGS")
-                    Text("ランニング設定")
+                    ARLabel(text: AppStrings.Settings.eyebrow)
+                    Text(AppStrings.Settings.title)
                         .font(.system(size: 30, weight: .bold))
                         .foregroundColor(.white)
-                    Text("目標を設定してください")
+                    Text(AppStrings.Settings.subtitle)
                         .font(.system(size: 14))
                         .foregroundColor(.arGrayText)
                         .padding(.top, 2)
@@ -56,7 +56,7 @@ struct RunningSettingsView: View {
                     // Time
                     SettingCard(
                         icon: "clock",
-                        label: "時間",
+                        label: AppStrings.Settings.duration,
                         displayValue: timeDisplay,
                         inputText: $timeInput,
                         isEditing: $editingTime,
@@ -80,8 +80,8 @@ struct RunningSettingsView: View {
                     // Distance
                     SettingCard(
                         icon: "mappin.and.ellipse",
-                        label: "距離",
-                        displayValue: String(format: "%.2f km", configuration.distanceKm),
+                        label: AppStrings.Settings.distance,
+                        displayValue: AppStrings.Formats.settingsDistance(configuration.distanceKm),
                         inputText: $distanceInput,
                         isEditing: $editingDistance,
                         isFocused: focusedField == .distance,
@@ -106,8 +106,8 @@ struct RunningSettingsView: View {
                     // Pace
                     SettingCard(
                         icon: "speedometer",
-                        label: "ペース（速度）",
-                        displayValue: String(format: "%.1f km/h", configuration.paceKmh),
+                        label: AppStrings.Settings.pace,
+                        displayValue: AppStrings.Formats.settingsPace(configuration.paceKmh),
                         inputText: $paceInput,
                         isEditing: $editingPace,
                         isFocused: focusedField == .pace,
@@ -205,7 +205,7 @@ struct RunningSettingsView: View {
 // MARK: - Setting Card Component
 struct SettingCard: View {
     let icon: String
-    let label: String
+    let label: LocalizedStringKey
     let displayValue: String
     @Binding var inputText: String
     @Binding var isEditing: Bool

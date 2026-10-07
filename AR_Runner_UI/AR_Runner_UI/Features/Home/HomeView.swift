@@ -77,12 +77,12 @@ struct HomeView: View {
                 HStack(spacing: 4) {
                     Image(systemName: "chevron.down")
                         .font(.system(size: 12, weight: .bold))
-                    Text("前回の記録")
+                    Text(AppStrings.Home.lastRun)
                         .font(.system(size: 24, weight: .bold, design: .rounded))
                 }
                 .foregroundStyle(.white)
 
-                Text("最新のランニング状況")
+                Text(AppStrings.Home.latestStatus)
                     .font(.system(size: 12, weight: .medium))
                     .foregroundStyle(secondaryText)
                     .textCase(.uppercase)
@@ -94,17 +94,17 @@ struct HomeView: View {
                 Button {
                     onOpenHistory()
                 } label: {
-                    Label("履歴", systemImage: "clock.arrow.circlepath")
+                    Label(AppStrings.Home.history, systemImage: "clock.arrow.circlepath")
                 }
                 Button {
                     onOpenARSettings()
                 } label: {
-                    Label("AR設定", systemImage: "eyeglasses")
+                    Label(AppStrings.Home.arSettings, systemImage: "eyeglasses")
                 }
                 Button {
                     onOpenPhoneSettings()
                 } label: {
-                    Label("スマホ設定", systemImage: "gearshape")
+                    Label(AppStrings.Home.phoneSettings, systemImage: "gearshape")
                 }
             } label: {
                 Image(systemName: "line.3.horizontal")
@@ -153,25 +153,25 @@ struct HomeView: View {
     private var statsRow: some View {
         VStack(spacing: 10) {
             HStack(spacing: 10) {
-                statBox(label: "日付", value: lastRun.dateText ?? "-")
-                statBox(label: "時間", value: lastRun.durationText ?? "-")
+                statBox(label: AppStrings.Common.date, value: lastRun.dateText ?? "-")
+                statBox(label: AppStrings.Common.time, value: lastRun.durationText ?? "-")
             }
             HStack(spacing: 10) {
                 statBox(
-                    label: "距離",
+                    label: AppStrings.Common.distance,
                     value: lastRun.distanceKm.map { String(format: "%.2f", $0) } ?? "-",
-                    unit: lastRun.distanceKm != nil ? "km" : nil
+                    unit: lastRun.distanceKm != nil ? AppStrings.Common.kilometers : nil
                 )
                 statBox(
-                    label: "速さ",
+                    label: AppStrings.Common.speed,
                     value: lastRun.paceText ?? "-",
-                    unit: lastRun.paceText != nil ? "/km" : nil
+                    unit: lastRun.paceText != nil ? AppStrings.Common.perKilometer : nil
                 )
             }
         }
     }
 
-    private func statBox(label: String, value: String, unit: String? = nil) -> some View {
+    private func statBox(label: LocalizedStringKey, value: String, unit: LocalizedStringKey? = nil) -> some View {
         VStack(alignment: .leading, spacing: 6) {
             Text(label)
                 .font(.system(size: 14, weight: .medium))
@@ -201,12 +201,12 @@ struct HomeView: View {
 
     private var bottomStartCard: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Let's run together!")
+            Text(AppStrings.Home.runTogether)
                 .font(.system(size: 20, weight: .medium, design: .rounded))
                 .foregroundStyle(.white.opacity(0.85))
                 .fixedSize(horizontal: false, vertical: true)
 
-            SlideToStartButton(title: "Get Started", accent: accent, onComplete: onNext)
+            SlideToStartButton(title: AppStrings.Home.getStarted, accent: accent, onComplete: onNext)
         }
         .padding(22)
         .background(cardColor)
@@ -224,7 +224,7 @@ struct HomeView: View {
 /// right edge of the track to trigger `onComplete`. Snaps back if released
 /// before crossing the completion threshold.
 private struct SlideToStartButton: View {
-    let title: String
+    let title: LocalizedStringKey
     let accent: Color
     let onComplete: () -> Void
 

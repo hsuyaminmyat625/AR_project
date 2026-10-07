@@ -23,8 +23,8 @@ struct StatsView: View {
                     VStack(spacing: 0) {
                         // Header
                         VStack(alignment: .leading, spacing: 4) {
-                            ARLabel(text: "ACTIVITY")
-                            Text("ナイスラン！")
+                            ARLabel(text: AppStrings.History.activityEyebrow)
+                            Text(AppStrings.History.niceRun)
                                 .font(.system(size: 30, weight: .bold))
                                 .foregroundColor(.white)
                         }
@@ -53,13 +53,13 @@ struct StatsView: View {
                                     .rotationEffect(.degrees(-90))
 
                                 VStack(spacing: 3) {
-                                    Text("シンクロ率")
+                                    Text(AppStrings.History.syncRate)
                                         .font(.system(size: 11))
                                         .foregroundColor(.arGrayText)
                                     Text("87%")
                                         .font(.system(size: 40, weight: .bold))
                                         .foregroundColor(.white)
-                                    Text("TARGET ACHIEVED")
+                                    Text(AppStrings.History.targetAchieved)
                                         .font(.system(size: 9, weight: .bold))
                                         .foregroundColor(.arYellow)
                                         .tracking(1)
@@ -85,12 +85,12 @@ struct StatsView: View {
                         // Stats grid
                         Grid(horizontalSpacing: 10, verticalSpacing: 10) {
                             GridRow {
-                                StatMiniCard(title: "距離", value: "2.13", unit: "km")
-                                StatMiniCard(title: "タイム", value: "11:24", unit: "")
+                                StatMiniCard(title: AppStrings.History.distance, value: "2.13", unit: AppStrings.Common.kilometers)
+                                StatMiniCard(title: AppStrings.History.duration, value: "11:24", unit: nil)
                             }
                             GridRow {
-                                StatMiniCard(title: "平均ペース", value: "5'21\"", unit: "/km")
-                                StatMiniCard(title: "消費カロリー", value: "164", unit: "kcal")
+                                StatMiniCard(title: AppStrings.History.averagePace, value: "5'21\"", unit: AppStrings.Common.perKilometer)
+                                StatMiniCard(title: AppStrings.History.calories, value: "164", unit: AppStrings.Common.kilocalories)
                             }
                         }
                         .padding(.horizontal, 24)
@@ -99,8 +99,8 @@ struct StatsView: View {
 
                         // Buttons
                         VStack(spacing: 10) {
-                            ARButton("履歴を見る", icon: "clock.arrow.circlepath") { onHistory() }
-                            ARButton("終了", style: .secondary) { onFinish() }
+                            ARButton(AppStrings.History.viewHistory, icon: "clock.arrow.circlepath") { onHistory() }
+                            ARButton(AppStrings.Common.finish, style: .secondary) { onFinish() }
                         }
                         .padding(.horizontal, 24)
                         .padding(.bottom, 52)
@@ -136,8 +136,8 @@ struct HistoryView: View {
 
                 // Header
                 VStack(alignment: .leading, spacing: 4) {
-                    ARLabel(text: "HISTORY")
-                    Text("ランニング履歴")
+                    ARLabel(text: AppStrings.History.eyebrow)
+                    Text(AppStrings.History.title)
                         .font(.system(size: 30, weight: .bold))
                         .foregroundColor(.white)
                 }
@@ -189,9 +189,9 @@ struct HistoryView: View {
 
 // MARK: - Stat Mini Card
 struct StatMiniCard: View {
-    let title: String
+    let title: LocalizedStringKey
     let value: String
-    let unit: String
+    let unit: LocalizedStringKey?
 
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
@@ -202,7 +202,7 @@ struct StatMiniCard: View {
                 Text(value)
                     .font(.system(size: 24, weight: .bold))
                     .foregroundColor(.white)
-                if !unit.isEmpty {
+                if let unit {
                     Text(unit)
                         .font(.system(size: 12))
                         .foregroundColor(.arGrayText)

@@ -53,10 +53,10 @@ struct CourseSetupView: View {
                         }
 
                         VStack(alignment: .leading, spacing: 6) {
-                            Text("三宮駅")
+                            Text(AppStrings.Course.origin)
                                 .font(.system(size: 15, weight: .semibold))
                                 .foregroundColor(.white)
-                            Text("市役所前")
+                            Text(AppStrings.Course.destination)
                                 .font(.system(size: 15))
                                 .foregroundColor(.arGrayText)
                         }
@@ -67,7 +67,7 @@ struct CourseSetupView: View {
                             Text("2.1")
                                 .font(.system(size: 26, weight: .bold))
                                 .foregroundColor(.arYellow)
-                            Text("km")
+                            Text(AppStrings.Common.kilometers)
                                 .font(.system(size: 12))
                                 .foregroundColor(.arGrayText)
                         }
@@ -86,7 +86,7 @@ struct CourseSetupView: View {
                             HStack(spacing: 8) {
                                 Image(systemName: "gearshape")
                                     .font(.system(size: 14))
-                                Text("設定")
+                                Text(AppStrings.Common.settings)
                                     .font(.system(size: 15, weight: .medium))
                             }
                             .frame(maxWidth: .infinity)
@@ -103,7 +103,7 @@ struct CourseSetupView: View {
                             HStack(spacing: 8) {
                                 Image(systemName: "play.fill")
                                     .font(.system(size: 13))
-                                Text("開始")
+                                Text(AppStrings.Common.start)
                                     .font(.system(size: 15, weight: .bold))
                             }
                             .frame(maxWidth: .infinity)
@@ -185,15 +185,15 @@ struct RunningView: View {
                 VStack(spacing: 0) {
                     HStack(alignment: .top) {
                         VStack(alignment: .leading, spacing: 1) {
-                            ARLabel(text: "伴走中")
+                            ARLabel(text: AppStrings.Running.active)
                             Text(elapsedStr)
                                 .font(.system(size: 34, weight: .bold, design: .monospaced))
                                 .foregroundColor(.white)
                         }
                         Spacer()
                         VStack(alignment: .trailing, spacing: 1) {
-                            ARLabel(text: "距離")
-                            Text(String(format: "%.2fkm", distance))
+                            ARLabel(text: AppStrings.Common.distance)
+                            Text(AppStrings.Formats.runningDistance(distance))
                                 .font(.system(size: 34, weight: .bold, design: .monospaced))
                                 .foregroundColor(.white)
                         }
@@ -221,7 +221,7 @@ struct RunningView: View {
                                 Text("\(bpm)")
                                     .font(.system(size: 24, weight: .bold, design: .monospaced))
                                     .foregroundColor(.white)
-                                Text("bpm")
+                                Text(AppStrings.Common.bpm)
                                     .font(.system(size: 11))
                                     .foregroundColor(.arGrayText)
                             }
@@ -231,7 +231,7 @@ struct RunningView: View {
                                 Text(paceDisplay)
                                     .font(.system(size: 30, weight: .bold, design: .monospaced))
                                     .foregroundColor(.arYellow)
-                                Text("ペース /km")
+                                Text(AppStrings.Running.pace)
                                     .font(.system(size: 11))
                                     .foregroundColor(.arGrayText)
                             }
@@ -241,7 +241,7 @@ struct RunningView: View {
                                 Text("\(syncRate)%")
                                     .font(.system(size: 24, weight: .bold, design: .monospaced))
                                     .foregroundColor(syncRate >= 80 ? .arYellow : .orange)
-                                Text("シンクロ率")
+                                Text(AppStrings.Running.syncRate)
                                     .font(.system(size: 11))
                                     .foregroundColor(.arGrayText)
                             }
@@ -288,9 +288,9 @@ struct RunningView: View {
                 )
                 bpm = Int.random(in: 138...148)
             }
-            .alert("ランを終了しますか？", isPresented: $showEndAlert) {
-                Button("終了", role: .destructive) { onEnd() }
-                Button("続ける", role: .cancel) {}
+            .alert(AppStrings.Common.endRunTitle, isPresented: $showEndAlert) {
+                Button(AppStrings.Common.finish, role: .destructive) { onEnd() }
+                Button(AppStrings.Common.continueRun, role: .cancel) {}
             }
         }
     }

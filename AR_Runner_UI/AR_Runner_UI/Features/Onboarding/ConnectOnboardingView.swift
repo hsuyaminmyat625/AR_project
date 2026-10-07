@@ -14,8 +14,8 @@ struct ConnectView: View {
 
                 // Header
                 VStack(alignment: .leading, spacing: 4) {
-                    ARLabel(text: "XREAL SETUP")
-                    Text("グラスを接続\nしましょう")
+                    ARLabel(text: AppStrings.Onboarding.connectEyebrow)
+                    Text(AppStrings.Onboarding.connectTitle)
                         .font(.system(size: 30, weight: .bold))
                         .foregroundColor(.white)
                         .lineSpacing(2)
@@ -75,7 +75,7 @@ struct ConnectView: View {
                         .scaleEffect(scanning ? 1.3 : 1.0)
                         .animation(.easeInOut(duration: 0.7).repeatForever(autoreverses: true), value: scanning)
 
-                    Text(isConnected ? "XREAL One 接続済み" : scanning ? "スキャン中..." : "デバイスを検索しています")
+                    Text(isConnected ? AppStrings.Onboarding.connectedStatus : scanning ? AppStrings.Onboarding.scanningStatus : AppStrings.Onboarding.searchingStatus)
                         .font(.system(size: 13, weight: .medium))
                         .foregroundColor(isConnected ? .arYellow : scanning ? .orange : .arGrayText)
                 }
@@ -89,16 +89,16 @@ struct ConnectView: View {
 
                 VStack(spacing: 10) {
                     if isConnected {
-                        ARButton("次へ", icon: "arrow.right") { onNext() }
+                        ARButton(AppStrings.Common.next, icon: "arrow.right") { onNext() }
                     } else {
-                        ARButton("接続する", icon: "bolt.fill") {
+                        ARButton(AppStrings.Common.connect, icon: "bolt.fill") {
                             scanning = true
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                 scanning = false
                                 isConnected = true
                             }
                         }
-                        ARButton("スキップ", style: .secondary) { onNext() }
+                        ARButton(AppStrings.Common.skip, style: .secondary) { onNext() }
                     }
                 }
                 .padding(.horizontal, 24)
@@ -114,10 +114,10 @@ struct OnboardingView: View {
     let onBack: () -> Void
     @State private var page = 0
 
-    let pages: [(eyebrow: String, title: String, body: String)] = [
-        ("WELCOME", "ランニングの\n未来へ", "ARグラスをつけて走るだけ。\nアバターがあなたのペースをリードします。"),
-        ("AVATAR", "3m先に\n相棒。", "視線移動ゼロ。数値を見なくていい。\n感覚だけで最適なペースへ。"),
-        ("SYNC", "全デバイスが\n連携する。", "Apple Watch・イヤホン・ARグラスが\n一体となってゾーンへ導きます。"),
+    let pages: [(eyebrow: LocalizedStringKey, title: LocalizedStringKey, body: LocalizedStringKey)] = [
+        (AppStrings.Onboarding.welcomeEyebrow, AppStrings.Onboarding.welcomeTitle, AppStrings.Onboarding.welcomeBody),
+        (AppStrings.Onboarding.avatarEyebrow, AppStrings.Onboarding.avatarTitle, AppStrings.Onboarding.avatarBody),
+        (AppStrings.Onboarding.syncEyebrow, AppStrings.Onboarding.syncTitle, AppStrings.Onboarding.syncBody),
     ]
 
     var body: some View {
@@ -192,7 +192,7 @@ struct OnboardingView: View {
 
                 Spacer()
 
-                ARButton(page < pages.count - 1 ? "次へ" : "はじめる", icon: "arrow.right") {
+                ARButton(page < pages.count - 1 ? AppStrings.Common.next : AppStrings.Onboarding.start, icon: "arrow.right") {
                     if page < pages.count - 1 {
                         withAnimation { page += 1 }
                     } else {

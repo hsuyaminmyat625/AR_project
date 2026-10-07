@@ -39,7 +39,7 @@ struct LockScreenView: View {
                     }
 
                     VStack(spacing: 6) {
-                        Text("AR ランニング中")
+                        Text(AppStrings.Running.active)
                             .font(.system(size: 13, weight: .medium))
                             .foregroundColor(Color.white.opacity(0.3))
                             .tracking(1)
@@ -54,7 +54,7 @@ struct LockScreenView: View {
                                         .repeatForever(autoreverses: true),
                                     value: UUID()
                                 )
-                            Text("スワイプして解除")
+                            Text(AppStrings.Common.swipeToUnlock)
                                 .font(.system(size: 13))
                                 .foregroundColor(Color.white.opacity(0.25 + progress * 0.5))
                         }
@@ -129,9 +129,9 @@ struct LockScreenView: View {
                 }
         )
         .statusBarHidden(true)
-        .alert("ランを終了しますか？", isPresented: $showEndAlert) {
-            Button("終了", role: .destructive) { onEnd() }
-            Button("続ける", role: .cancel) {}
+        .alert(AppStrings.Common.endRunTitle, isPresented: $showEndAlert) {
+            Button(AppStrings.Common.finish, role: .destructive) { onEnd() }
+            Button(AppStrings.Common.continueRun, role: .cancel) {}
         }
     }
 

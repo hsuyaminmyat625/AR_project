@@ -12,14 +12,14 @@ extension Color {
 
 // MARK: - Primary Button
 struct ARButton: View {
-    let title: String
+    let title: LocalizedStringKey
     let icon: String?
     let style: ButtonStyle
     let action: () -> Void
 
     enum ButtonStyle { case primary, secondary, icon }
 
-    init(_ title: String, icon: String? = nil, style: ButtonStyle = .primary, action: @escaping () -> Void) {
+    init(_ title: LocalizedStringKey, icon: String? = nil, style: ButtonStyle = .primary, action: @escaping () -> Void) {
         self.title = title; self.icon = icon; self.style = style; self.action = action
     }
 
@@ -65,7 +65,7 @@ struct ARScreen<Content: View>: View {
 
 // MARK: - Eyebrow Label  (e.g.  "ACTIVITY" in yellow tracking)
 struct ARLabel: View {
-    let text: String
+    let text: LocalizedStringKey
     var body: some View {
         Text(text)
             .font(.system(size: 11, weight: .bold))
@@ -86,7 +86,7 @@ struct ARDivider: View {
 // MARK: - Bottom Tab Bar
 struct TabBarView: View {
     @Binding var selected: Int
-    let items: [(icon: String, label: String)]
+    let items: [(icon: String, label: LocalizedStringKey)]
 
     var body: some View {
         HStack(spacing: 0) {
@@ -116,8 +116,8 @@ struct TabBarView: View {
 // MARK: - Stat Badge
 struct StatBadge: View {
     let value: String
-    let unit: String
-    let label: String
+    let unit: LocalizedStringKey
+    let label: LocalizedStringKey
 
     var body: some View {
         VStack(spacing: 2) {
