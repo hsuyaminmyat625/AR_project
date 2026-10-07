@@ -396,6 +396,10 @@ private extension Color {
     }
 }
 
-#Preview {
-    HomeView(onNext: {}, onBack: {})
+#if DEBUG
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView(onNext: {}, onBack: {})
+    }
 }
+#endif

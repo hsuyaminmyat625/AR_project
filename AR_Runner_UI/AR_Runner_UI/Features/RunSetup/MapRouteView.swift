@@ -251,6 +251,10 @@ private final class MapRouteLocationManager: NSObject, ObservableObject, CLLocat
     }
 }
 
-#Preview {
-    MapRouteView(onNext: {}, onBack: {})
+#if DEBUG
+struct MapRouteView_Previews: PreviewProvider {
+    static var previews: some View {
+        MapRouteView(onNext: {}, onBack: {})
+    }
 }
+#endif
