@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct AR_Runner_UIApp: App {
+struct ARRunnerApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

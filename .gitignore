@@ -1,0 +1,19 @@
+# Xcode user-specific data
+**/xcuserdata/
+**/*.xcuserstate
+**/*.xcbkptlist
+
+# macOS metadata
+.DS_Store
+
+# Xcode build output
+build/
+DerivedData/
+
+# Swift Package Manager checkouts and build data
+.build/
+Packages/
+
+# Local environment files
+.env
+.env.*

@@ -1,18 +1,5 @@
 import SwiftUI
 
-// MARK: - Navigation State
-enum AppScreen {
-    case onboarding
-    case home
-    case deviceConnect
-    case runningSettings
-    case mapRoute
-    case courseRunning
-    case lockScreen
-    case stats
-    case history
-}
-
 struct ContentView: View {
     private static let onboardingCompletionKey = "hasCompletedOnboarding"
     @State private var screen: AppScreen
