@@ -8,9 +8,14 @@ struct ContentView: View {
     init() {
         _screen = State(
             initialValue: UserDefaults.standard.bool(forKey: Self.onboardingCompletionKey)
-            ? .deviceConnect
+            ? .home
             : .onboarding
         )
+    }
+
+    private func completeOnboarding() {
+        UserDefaults.standard.set(true, forKey: Self.onboardingCompletionKey)
+        screen = .home
     }
 
     var body: some View {
@@ -22,7 +27,7 @@ struct ContentView: View {
             // 1. Three-page tutorial
             case .onboarding:
                 OnboardingView(
-                    onNext: { screen = .home },
+                    onNext: completeOnboarding,
                     onBack: { }
                 )
 
