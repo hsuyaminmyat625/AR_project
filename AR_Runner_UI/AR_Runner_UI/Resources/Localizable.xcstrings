@@ -3,355 +3,1499 @@
   "strings" : {
     "common.back" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Back" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "戻る" } } }
-    },
-    "common.next" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Next" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "次へ" } } }
-    },
-    "common.connect" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Connect" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "接続する" } } }
-    },
-    "common.skip" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Skip" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "スキップ" } } }
-    },
-    "common.start" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Start" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "開始" } } }
-    },
-    "common.settings" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Settings" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "設定" } } }
-    },
-    "common.finish" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Finish" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "終了" } } }
-    },
-    "common.continue" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Continue" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "続ける" } } }
-    },
-    "common.openSettings" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Open Settings" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "設定を開く" } } }
-    },
-    "common.kilometers" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "km" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "km" } } }
-    },
-    "common.perKilometer" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "/km" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "/km" } } }
-    },
-    "common.kilocalories" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "kcal" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "kcal" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "戻る"
+          }
+        }
+      }
     },
     "common.bpm" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "bpm" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "bpm" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "bpm"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "bpm"
+          }
+        }
+      }
     },
-    "common.distance" : {
+    "common.connect" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Distance" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "距離" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connect"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "接続する"
+          }
+        }
+      }
     },
-    "common.time" : {
+    "common.continue" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Time" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "時間" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "続ける"
+          }
+        }
+      }
     },
     "common.date" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Date" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "日付" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日付"
+          }
+        }
+      }
     },
-    "common.speed" : {
+    "common.distance" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Speed" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "速さ" } } }
-    },
-    "common.noRecords" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "No records yet" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "まだ記録がありません" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distance"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "距離"
+          }
+        }
+      }
     },
     "common.ellipsis" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "..." } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "..." } } }
-    },
-    "common.swipeToUnlock" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Swipe to unlock" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "スワイプして解除" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "..."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "..."
+          }
+        }
+      }
     },
     "common.endRun.title" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "End this run?" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "ランを終了しますか？" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "End this run?"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ランを終了しますか？"
+          }
+        }
+      }
     },
-    "home.lastRun" : {
+    "common.finish" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Previous Run" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "前回の記録" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finish"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "終了"
+          }
+        }
+      }
     },
-    "home.latestStatus" : {
+    "common.kilocalories" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Latest running status" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "最新のランニング状況" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kcal"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kcal"
+          }
+        }
+      }
     },
-    "home.history" : {
+    "common.kilometers" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "History" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "履歴" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "km"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "km"
+          }
+        }
+      }
     },
-    "home.arSettings" : {
+    "common.next" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "AR Settings" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "AR設定" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "次へ"
+          }
+        }
+      }
     },
-    "home.phoneSettings" : {
+    "common.noRecords" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Phone Settings" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "スマホ設定" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No records yet"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "まだ記録がありません"
+          }
+        }
+      }
     },
-    "home.runTogether" : {
+    "common.openSettings" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Let's run together!" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "一緒に走りましょう！" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Settings"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定を開く"
+          }
+        }
+      }
     },
-    "home.getStarted" : {
+    "common.perKilometer" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Get Started" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "始める" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "/km"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "/km"
+          }
+        }
+      }
     },
-    "location.permission.title" : {
+    "common.settings" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Location permission is off" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "位置情報が許可されていません" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定"
+          }
+        }
+      }
     },
-    "location.permission.message" : {
+    "common.skip" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Allow location access in Settings to show your position and route." } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "現在地とルートを表示するには、設定から位置情報を許可してください。" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skip"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スキップ"
+          }
+        }
+      }
     },
-    "onboarding.connect.eyebrow" : {
+    "common.speed" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "XREAL SETUP" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "XREAL SETUP" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speed"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "速さ"
+          }
+        }
+      }
     },
-    "onboarding.connect.title" : {
+    "common.start" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Connect your glasses" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "グラスを接続\nしましょう" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開始"
+          }
+        }
+      }
     },
-    "onboarding.connect.status.connected" : {
+    "common.swipeToUnlock" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "XREAL One Connected" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "XREAL One 接続済み" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swipe to unlock"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スワイプして解除"
+          }
+        }
+      }
     },
-    "onboarding.connect.status.scanning" : {
+    "common.time" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Scanning..." } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "スキャン中..." } } }
-    },
-    "onboarding.connect.status.searching" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Searching for device" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "デバイスを検索しています" } } }
-    },
-    "onboarding.start" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Get Started" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "はじめる" } } }
-    },
-    "onboarding.page.welcome.eyebrow" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "WELCOME" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "WELCOME" } } }
-    },
-    "onboarding.page.welcome.title" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "The future of\nrunning" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "ランニングの\n未来へ" } } }
-    },
-    "onboarding.page.welcome.body" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Just put on your AR glasses and run.\nYour avatar will lead your pace." } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "ARグラスをつけて走るだけ。\nアバターがあなたのペースをリードします。" } } }
-    },
-    "onboarding.page.avatar.eyebrow" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "AVATAR" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "AVATAR" } } }
-    },
-    "onboarding.page.avatar.title" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Your companion\n3m ahead." } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "3m先に\n相棒。" } } }
-    },
-    "onboarding.page.avatar.body" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "No need to shift your gaze or check numbers.\nFind your best pace by feel." } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "視線移動ゼロ。数値を見なくていい。\n感覚だけで最適なペースへ。" } } }
-    },
-    "onboarding.page.sync.eyebrow" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "SYNC" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "SYNC" } } }
-    },
-    "onboarding.page.sync.title" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Every device\nworks together." } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "全デバイスが\n連携する。" } } }
-    },
-    "onboarding.page.sync.body" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Apple Watch, earbuds, and AR glasses\nguide you into the zone together." } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "Apple Watch・イヤホン・ARグラスが\n一体となってゾーンへ導きます。" } } }
-    },
-    "devices.setup.eyebrow" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "SETUP" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "SETUP" } } }
-    },
-    "devices.title" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Connect devices" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "デバイスを接続" } } }
-    },
-    "devices.subtitle" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Connect the devices you will use" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "使用するデバイスを接続してください" } } }
-    },
-    "devices.arGlasses" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "AR glasses" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "ARグラス" } } }
-    },
-    "devices.xrealOne" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "XREAL One" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "XREAL One" } } }
-    },
-    "devices.appleWatch" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Apple Watch" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "Apple Watch" } } }
-    },
-    "devices.seriesUltra" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Series / Ultra" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "Series / Ultra" } } }
-    },
-    "devices.airPods" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "AirPods" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "AirPods" } } }
-    },
-    "devices.proMax" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Pro / Max" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "Pro / Max" } } }
-    },
-    "devices.tapToConnect" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Tap a device to connect, or skip" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "デバイスをタップして接続、またはスキップ" } } }
-    },
-    "devices.connected" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Connected" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "接続済み" } } }
-    },
-    "devices.connecting" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Connecting..." } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "接続中..." } } }
-    },
-    "settings.eyebrow" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "SETTINGS" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "SETTINGS" } } }
-    },
-    "settings.title" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Running settings" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "ランニング設定" } } }
-    },
-    "settings.subtitle" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Set your goal" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "目標を設定してください" } } }
-    },
-    "settings.duration" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Time" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "時間" } } }
-    },
-    "settings.distance" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Distance" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "距離" } } }
-    },
-    "settings.pace" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Pace (speed)" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "ペース（速度）" } } }
-    },
-    "route.eyebrow" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "ROUTE" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "ROUTE" } } }
-    },
-    "route.title" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Choose a route" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "ルートを選択" } } }
-    },
-    "route.subtitle" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Check your current location" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "現在地を確認してください" } } }
-    },
-    "route.pastRoutes" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Past routes" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "過去のルート" } } }
-    },
-    "route.start" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Start running" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "ランニングを開始" } } }
-    },
-    "course.origin" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Sannomiya Station" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "三宮駅" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "時間"
+          }
+        }
+      }
     },
     "course.destination" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "City Hall" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "市役所前" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "City Hall"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "市役所前"
+          }
+        }
+      }
     },
-    "running.active" : {
+    "course.origin" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Running" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "伴走中" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sannomiya Station"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "三宮駅"
+          }
+        }
+      }
     },
-    "running.pace" : {
+    "devices.airPods" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Pace /km" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "ペース /km" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AirPods"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AirPods"
+          }
+        }
+      }
     },
-    "running.syncRate" : {
+    "devices.appleWatch" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Sync rate" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "シンクロ率" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Watch"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Watch"
+          }
+        }
+      }
     },
-    "history.activity.eyebrow" : {
+    "devices.arGlasses" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "ACTIVITY" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "ACTIVITY" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AR glasses"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ARグラス"
+          }
+        }
+      }
     },
-    "history.niceRun" : {
+    "devices.connected" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Nice run!" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "ナイスラン！" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connected"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "接続済み"
+          }
+        }
+      }
     },
-    "history.syncRate" : {
+    "devices.connecting" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Sync rate" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "シンクロ率" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connecting..."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "接続中..."
+          }
+        }
+      }
     },
-    "history.targetAchieved" : {
+    "devices.proMax" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "TARGET ACHIEVED" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "TARGET ACHIEVED" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pro / Max"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pro / Max"
+          }
+        }
+      }
     },
-    "history.distance" : {
+    "devices.seriesUltra" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Distance" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "距離" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Series / Ultra"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Series / Ultra"
+          }
+        }
+      }
     },
-    "history.duration" : {
+    "devices.setup.eyebrow" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Time" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "タイム" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SETUP"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SETUP"
+          }
+        }
+      }
     },
-    "history.averagePace" : {
+    "devices.subtitle" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Average pace" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "平均ペース" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connect the devices you will use"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用するデバイスを接続してください"
+          }
+        }
+      }
     },
-    "history.calories" : {
+    "devices.tapToConnect" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Calories burned" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "消費カロリー" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap a device to connect, or skip"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デバイスをタップして接続、またはスキップ"
+          }
+        }
+      }
     },
-    "history.viewHistory" : {
+    "devices.title" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "View history" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "履歴を見る" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connect devices"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デバイスを接続"
+          }
+        }
+      }
     },
-    "history.eyebrow" : {
+    "devices.xrealOne" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "HISTORY" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "HISTORY" } } }
-    },
-    "history.title" : {
-      "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Running history" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "ランニング履歴" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "XREAL One"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "XREAL One"
+          }
+        }
+      }
     },
     "format.route.distance" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Distance %.2f km" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "距離%.2fkm" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distance %.2f km"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "距離%.2fkm"
+          }
+        }
+      }
     },
     "format.running.distance" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "%.2f km" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "%.2fkm" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.2f km"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.2fkm"
+          }
+        }
+      }
     },
     "format.settings.distance" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "%.2f km" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "%.2f km" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.2f km"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.2f km"
+          }
+        }
+      }
     },
     "format.settings.pace" : {
       "extractionState" : "manual",
-      "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "%.1f km/h" } }, "ja" : { "stringUnit" : { "state" : "translated", "value" : "%.1f km/h" } } }
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.1f km/h"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.1f km/h"
+          }
+        }
+      }
+    },
+    "history.activity.eyebrow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ACTIVITY"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ACTIVITY"
+          }
+        }
+      }
+    },
+    "history.averagePace" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Average pace"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "平均ペース"
+          }
+        }
+      }
+    },
+    "history.calories" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calories burned"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "消費カロリー"
+          }
+        }
+      }
+    },
+    "history.distance" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distance"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "距離"
+          }
+        }
+      }
+    },
+    "history.duration" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "タイム"
+          }
+        }
+      }
+    },
+    "history.eyebrow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HISTORY"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HISTORY"
+          }
+        }
+      }
+    },
+    "history.niceRun" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nice run!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ナイスラン！"
+          }
+        }
+      }
+    },
+    "history.syncRate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sync rate"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "シンクロ率"
+          }
+        }
+      }
+    },
+    "history.targetAchieved" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TARGET ACHIEVED"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TARGET ACHIEVED"
+          }
+        }
+      }
+    },
+    "history.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Running history"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ランニング履歴"
+          }
+        }
+      }
+    },
+    "history.viewHistory" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "View history"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "履歴を見る"
+          }
+        }
+      }
+    },
+    "home.arSettings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AR Settings"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AR設定"
+          }
+        }
+      }
+    },
+    "home.getStarted" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get Started"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "始める"
+          }
+        }
+      }
+    },
+    "home.history" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "History"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "履歴"
+          }
+        }
+      }
+    },
+    "home.lastRun" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Previous Run"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "前回の記録"
+          }
+        }
+      }
+    },
+    "home.latestStatus" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latest running status"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最新のランニング状況"
+          }
+        }
+      }
+    },
+    "home.phoneSettings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Phone Settings"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スマホ設定"
+          }
+        }
+      }
+    },
+    "home.runTogether" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Let's run together!"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一緒に走りましょう！"
+          }
+        }
+      }
+    },
+    "location.permission.message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allow location access in Settings to show your position and route."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "現在地とルートを表示するには、設定から位置情報を許可してください。"
+          }
+        }
+      }
+    },
+    "location.permission.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Location permission is off"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "位置情報が許可されていません"
+          }
+        }
+      }
+    },
+    "onboarding.connect.eyebrow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "XREAL SETUP"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "XREAL SETUP"
+          }
+        }
+      }
+    },
+    "onboarding.connect.status.connected" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "XREAL One Connected"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "XREAL One 接続済み"
+          }
+        }
+      }
+    },
+    "onboarding.connect.status.scanning" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scanning..."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "スキャン中..."
+          }
+        }
+      }
+    },
+    "onboarding.connect.status.searching" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Searching for device"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デバイスを検索しています"
+          }
+        }
+      }
+    },
+    "onboarding.connect.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connect your glasses"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "グラスを接続\nしましょう"
+          }
+        }
+      }
+    },
+    "onboarding.page.avatar.body" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No need to shift your gaze or check numbers.\nFind your best pace by feel."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "視線移動ゼロ。数値を見なくていい。\n感覚だけで最適なペースへ。"
+          }
+        }
+      }
+    },
+    "onboarding.page.avatar.eyebrow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AVATAR"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AVATAR"
+          }
+        }
+      }
+    },
+    "onboarding.page.avatar.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your companion\n3m ahead."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3m先に\n相棒。"
+          }
+        }
+      }
+    },
+    "onboarding.page.sync.body" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Watch, earbuds, and AR glasses\nguide you into the zone together."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Watch・イヤホン・ARグラスが\n一体となってゾーンへ導きます。"
+          }
+        }
+      }
+    },
+    "onboarding.page.sync.eyebrow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SYNC"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SYNC"
+          }
+        }
+      }
+    },
+    "onboarding.page.sync.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Every device\nworks together."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全デバイスが\n連携する。"
+          }
+        }
+      }
+    },
+    "onboarding.page.welcome.body" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Just put on your AR glasses and run.\nYour avatar will lead your pace."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ARグラスをつけて走るだけ。\nアバターがあなたのペースをリードします。"
+          }
+        }
+      }
+    },
+    "onboarding.page.welcome.eyebrow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WELCOME"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "WELCOME"
+          }
+        }
+      }
+    },
+    "onboarding.page.welcome.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The future of\nrunning"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ランニングの\n未来へ"
+          }
+        }
+      }
+    },
+    "onboarding.start" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get Started"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "はじめる"
+          }
+        }
+      }
+    },
+    "route.eyebrow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ROUTE"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ROUTE"
+          }
+        }
+      }
+    },
+    "route.pastRoutes" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Past routes"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "過去のルート"
+          }
+        }
+      }
+    },
+    "route.start" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start running"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ランニングを開始"
+          }
+        }
+      }
+    },
+    "route.subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Check your current location"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "現在地を確認してください"
+          }
+        }
+      }
+    },
+    "route.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose a route"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ルートを選択"
+          }
+        }
+      }
+    },
+    "running.active" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Running"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "伴走中"
+          }
+        }
+      }
+    },
+    "running.pace" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pace /km"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ペース /km"
+          }
+        }
+      }
+    },
+    "running.syncRate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sync rate"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "シンクロ率"
+          }
+        }
+      }
+    },
+    "settings.distance" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Distance"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "距離"
+          }
+        }
+      }
+    },
+    "settings.duration" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "時間"
+          }
+        }
+      }
+    },
+    "settings.eyebrow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SETTINGS"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SETTINGS"
+          }
+        }
+      }
+    },
+    "settings.pace" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pace (speed)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ペース（速度）"
+          }
+        }
+      }
+    },
+    "settings.subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set your goal"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "目標を設定してください"
+          }
+        }
+      }
+    },
+    "settings.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Running settings"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ランニング設定"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

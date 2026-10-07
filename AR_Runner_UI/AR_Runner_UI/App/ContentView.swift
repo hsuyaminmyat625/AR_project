@@ -1,5 +1,7 @@
 import SwiftUI
 
+// MARK: - Navigation State
+
 struct ContentView: View {
     private static let onboardingCompletionKey = "hasCompletedOnboarding"
     @State private var screen: AppScreen
@@ -35,7 +37,10 @@ struct ContentView: View {
             case .home:
                 HomeView(
                     onNext: { screen = .deviceConnect },
-                    onBack: { }
+                    onBack: { },
+                    onOpenHistory: { screen = .history },
+                    onOpenARSettings: { screen = .glassSettings },
+                    onOpenPhoneSettings: { screen = .phoneSettings }
                 )
 
             // 2. Connect AR glasses + Apple Watch + AirPods
@@ -84,8 +89,19 @@ struct ContentView: View {
 
             case .lockScreen:
                 LockScreenView(
-                    onUnlock: { screen = .courseRunning },
                     onEnd: { screen = .stats }
+                )
+                
+            // 9. AR Settings (from HomeView's hamburger menu)
+            case .glassSettings:
+                ARSettingsView(
+                    onBack: { screen = .home }
+                )
+                
+            // 10. Phone Settings (from HomeView's hamburger menu)
+            case .phoneSettings:
+                PhoneSettingsView(
+                    onBack: { screen = .home }
                 )
             }
         }
