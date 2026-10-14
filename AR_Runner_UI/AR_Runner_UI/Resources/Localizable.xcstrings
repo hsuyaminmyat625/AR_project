@@ -1,6 +1,27 @@
 {
   "sourceLanguage" : "ja",
   "strings" : {
+    "" : {
+
+    },
+    "%lld" : {
+
+    },
+    "%lld%%" : {
+
+    },
+    "2.1" : {
+
+    },
+    "87%" : {
+
+    },
+    "ARグラスの表示・動作を調整します" : {
+
+    },
+    "AR設定" : {
+
+    },
     "common.back" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -771,14 +792,14 @@
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Nice run!"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ナイスラン！"
+            "value" : "走行結果"
           }
         }
       }
@@ -970,6 +991,9 @@
         }
       }
     },
+    "km" : {
+
+    },
     "location.permission.message" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1003,6 +1027,9 @@
           }
         }
       }
+    },
+    "mile" : {
+
     },
     "onboarding.connect.eyebrow" : {
       "extractionState" : "manual",
@@ -1395,6 +1422,9 @@
         }
       }
     },
+    "SETTINGS" : {
+
+    },
     "settings.distance" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1496,6 +1526,18 @@
           }
         }
       }
+    },
+    "アプリの通知・位置情報・単位を設定します" : {
+
+    },
+    "スマホ設定" : {
+
+    },
+    "明るさ" : {
+
+    },
+    "距離の単位" : {
+
     }
   },
   "version" : "1.0"

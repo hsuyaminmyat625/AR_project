@@ -10,22 +10,9 @@
 		2106D7802FD91B9D00D4980C /* AR_Runner_UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AR_Runner_UI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		2A79AE053075EF7B00447F20 /* Exceptions for "AR_Runner_UI" folder in "AR_Runner_UI" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"AR-Runner-UI-Info.plist",
-			);
-			target = 2106D77F2FD91B9D00D4980C /* AR_Runner_UI */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		2106D7822FD91B9D00D4980C /* AR_Runner_UI */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				2A79AE053075EF7B00447F20 /* Exceptions for "AR_Runner_UI" folder in "AR_Runner_UI" target */,
-			);
 			path = AR_Runner_UI;
 			sourceTree = "<group>";
 		};
@@ -269,11 +256,6 @@
 				DEVELOPMENT_TEAM = 2A8ULHF589;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-<<<<<<< HEAD
-				INFOPLIST_FILE = "AR-Runner-UI-Info.plist";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "ランニング中の現在地を表示し、走行ルートを記録するために位置情報を使用します。";
-=======
->>>>>>> 2418e0baa034e8d66bd867ed3b67e7e4ca8be514
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -306,11 +288,6 @@
 				DEVELOPMENT_TEAM = LDL6BX68W7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-<<<<<<< HEAD
-				INFOPLIST_FILE = "AR-Runner-UI-Info.plist";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "ランニング中の現在地を表示し、走行ルートを記録するために位置情報を使用します。";
-=======
->>>>>>> 2418e0baa034e8d66bd867ed3b67e7e4ca8be514
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
