@@ -121,20 +121,34 @@ enum AppStrings {
     }
 
     enum Formats {
+        private static let appLocale = Locale(identifier: "ja_JP")
+
         static func routeDistance(_ distance: Double) -> String {
-            String.localizedStringWithFormat(String(localized: "format.route.distance"), distance)
+            String.localizedStringWithFormat(
+                String(localized: "format.route.distance", locale: appLocale),
+                distance
+            )
         }
 
         static func runningDistance(_ distance: Double) -> String {
-            String.localizedStringWithFormat(String(localized: "format.running.distance"), distance)
+            String.localizedStringWithFormat(
+                String(localized: "format.running.distance", locale: appLocale),
+                distance
+            )
         }
 
         static func settingsDistance(_ distance: Double) -> String {
-            String.localizedStringWithFormat(String(localized: "format.settings.distance"), distance)
+            String.localizedStringWithFormat(
+                String(localized: "format.settings.distance", locale: appLocale),
+                distance
+            )
         }
 
         static func settingsPace(_ pace: Double) -> String {
-            String.localizedStringWithFormat(String(localized: "format.settings.pace"), pace)
+            String.localizedStringWithFormat(
+                String(localized: "format.settings.pace", locale: appLocale),
+                pace
+            )
         }
     }
 }
