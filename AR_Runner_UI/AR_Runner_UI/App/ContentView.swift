@@ -15,7 +15,7 @@ struct ContentView: View {
         } else if !BodyInfoStore.shared.hasCompletedInitialSetup {
             initialScreen = .bodyInfo
         } else {
-            initialScreen = .deviceConnect
+            initialScreen = .home   // was .deviceConnect
         }
         _screen = State(initialValue: initialScreen)
     }
