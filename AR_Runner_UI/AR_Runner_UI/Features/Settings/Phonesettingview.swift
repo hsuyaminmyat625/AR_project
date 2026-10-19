@@ -9,6 +9,8 @@ import SwiftUI
 // MARK: - Phone Settings Screen
 struct PhoneSettingsView: View {
     let onBack: () -> Void
+    var onEditBodyInfo: () -> Void = {}
+    var onShowTutorial: () -> Void = {}
 
     @State private var notificationsEnabled = true
     @State private var backgroundLocationEnabled = true
@@ -41,6 +43,8 @@ struct PhoneSettingsView: View {
 
                 ScrollView(showsIndicators: false) {
                     VStack(spacing: 12) {
+                        linkRow(icon: "figure.stand", title: "身体情報", action: onEditBodyInfo)
+
                         toggleRow(icon: "bell.fill", title: "通知", isOn: $notificationsEnabled)
                         toggleRow(icon: "location.fill", title: "バックグラウンド位置情報", isOn: $backgroundLocationEnabled)
 
@@ -67,6 +71,8 @@ struct PhoneSettingsView: View {
                             RoundedRectangle(cornerRadius: 16)
                                 .stroke(Color.arBorder, lineWidth: 1)
                         )
+
+                        linkRow(icon: "questionmark.circle", title: "チュートリアルをもう一度見る", action: onShowTutorial)
                     }
                     .padding(.horizontal, 24)
                     .padding(.bottom, 52)
@@ -95,5 +101,30 @@ struct PhoneSettingsView: View {
             RoundedRectangle(cornerRadius: 16)
                 .stroke(Color.arBorder, lineWidth: 1)
         )
+    }
+
+    private func linkRow(icon: String, title: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            HStack {
+                Image(systemName: icon)
+                    .foregroundColor(.arYellow)
+                    .frame(width: 24)
+                Text(title)
+                    .font(.system(size: 15, weight: .semibold))
+                    .foregroundColor(.white)
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 13, weight: .semibold))
+                    .foregroundColor(.arGrayText)
+            }
+            .padding(16)
+            .background(Color.arCard)
+            .clipShape(RoundedRectangle(cornerRadius: 16))
+            .overlay(
+                RoundedRectangle(cornerRadius: 16)
+                    .stroke(Color.arBorder, lineWidth: 1)
+            )
+        }
+        .buttonStyle(.plain)
     }
 }

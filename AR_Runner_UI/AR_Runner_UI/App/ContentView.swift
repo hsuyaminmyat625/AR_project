@@ -8,11 +8,16 @@ struct ContentView: View {
     @State private var runConfiguration = RunConfiguration()
 
     init() {
-        _screen = State(
-            initialValue: UserDefaults.standard.bool(forKey: Self.onboardingCompletionKey)
-            ? .home
-            : .onboarding
-        )
+        let onboardingDone = UserDefaults.standard.bool(forKey: Self.onboardingCompletionKey)
+        let initialScreen: AppScreen
+        if !onboardingDone {
+            initialScreen = .onboarding
+        } else if !BodyInfoStore.shared.hasCompletedInitialSetup {
+            initialScreen = .bodyInfo
+        } else {
+            initialScreen = .deviceConnect
+        }
+        _screen = State(initialValue: initialScreen)
     }
 
     private func completeOnboarding() {
@@ -29,7 +34,7 @@ struct ContentView: View {
             // 1. Three-page tutorial
             case .onboarding:
                 OnboardingView(
-                    onNext: completeOnboarding,
+                    onNext: { screen = BodyInfoStore.shared.hasCompletedInitialSetup ? .home : .bodyInfo },
                     onBack: { }
                 )
 
@@ -101,7 +106,23 @@ struct ContentView: View {
             // 10. Phone Settings (from HomeView's hamburger menu)
             case .phoneSettings:
                 PhoneSettingsView(
-                    onBack: { screen = .home }
+                    onBack: { screen = .home },
+                    onEditBodyInfo: { screen = .bodyInfoEdit },
+                    onShowTutorial: { screen = .onboarding }
+                )
+                
+            case .bodyInfo:
+                BodyInfoView(
+                    isInitialSetup: true,
+                    onNext: { screen = .home },
+                    onBack: { }
+                )
+
+            case .bodyInfoEdit:
+                BodyInfoView(
+                    isInitialSetup: false,
+                    onNext: { screen = .phoneSettings },
+                    onBack: { screen = .phoneSettings }
                 )
             }
         }

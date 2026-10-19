@@ -17,4 +17,6 @@ enum AppScreen {
     case history
     case glassSettings
     case phoneSettings
+    case bodyInfo        // first-launch input
+    case bodyInfoEdit    // edit from settings
 }
