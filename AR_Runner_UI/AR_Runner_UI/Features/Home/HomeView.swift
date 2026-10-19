@@ -50,7 +50,7 @@ struct HomeView: View {
     private let secondaryText = Color.white.opacity(0.5)
 
     var body: some View {
-        ScrollView {
+        ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading, spacing: 16) {
                 header
                 lastRunCard
@@ -64,6 +64,7 @@ struct HomeView: View {
             .padding(.top, 8)
             .padding(.bottom, 20)
         }
+        .scrollBounceBehavior(.basedOnSize)
         .background(Color.black.ignoresSafeArea())
         .onAppear { locationManager.start() }
         .preferredColorScheme(.dark)
