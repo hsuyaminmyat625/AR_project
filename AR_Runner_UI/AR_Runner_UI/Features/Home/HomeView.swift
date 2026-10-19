@@ -29,6 +29,16 @@ struct LastRunSummary {
     static let empty = LastRunSummary(
         dateText: nil, distanceKm: nil, paceText: nil, durationText: nil, routeCoordinates: nil
     )
+
+    /// Sample data shown until the user has a real run record.
+    /// These values match the sample entry used by the History and Stats screens.
+    static let demo = LastRunSummary(
+        dateText: "6月15日",
+        distanceKm: 2.13,
+        paceText: "5'21\"",
+        durationText: "00:11:24",
+        routeCoordinates: nil
+    )
 }
 
 struct HomeView: View {
@@ -40,8 +50,8 @@ struct HomeView: View {
     var onOpenPhoneSettings: () -> Void = {}
 
     /// Injected by the caller once real run history is available.
-    /// Defaults to `.empty` so every field renders as "-".
-    var lastRun: LastRunSummary = .empty
+    /// Until then, the Home screen shows the demo summary.
+    var lastRun: LastRunSummary = .demo
 
     @StateObject private var locationManager = HomeLocationManager()
 
@@ -310,9 +320,16 @@ private final class HomeLocationManager: NSObject, ObservableObject, CLLocationM
     @Published private(set) var authorizationStatus: CLAuthorizationStatus
 
     private let manager = CLLocationManager()
+    private var hasReplacedDemoRoute = false
+
+    private static let demoCenter = CLLocationCoordinate2D(
+        latitude: 34.6937,
+        longitude: 135.5023
+    )
 
     override init() {
         authorizationStatus = manager.authorizationStatus
+        suggestedRoute = HomeLocationManager.loopRoute(around: HomeLocationManager.demoCenter)
         super.init()
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
@@ -345,8 +362,9 @@ private final class HomeLocationManager: NSObject, ObservableObject, CLLocationM
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let latest = locations.last, latest.horizontalAccuracy <= 50 else { return }
         userCoordinate = latest.coordinate
-        if suggestedRoute == nil {
+        if !hasReplacedDemoRoute {
             suggestedRoute = Self.loopRoute(around: latest.coordinate)
+            hasReplacedDemoRoute = true
         }
     }
 

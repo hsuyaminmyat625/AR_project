@@ -86,7 +86,7 @@ struct StatsView: View {
                         Grid(horizontalSpacing: 10, verticalSpacing: 10) {
                             GridRow {
                                 StatMiniCard(title: AppStrings.History.distance, value: "2.13", unit: AppStrings.Common.kilometers)
-                                StatMiniCard(title: AppStrings.History.duration, value: "11:24", unit: nil)
+                                StatMiniCard(title: AppStrings.History.duration, value: "00:11:24", unit: nil)
                             }
                             GridRow {
                                 StatMiniCard(title: AppStrings.History.averagePace, value: "5'21\"", unit: AppStrings.Common.perKilometer)
@@ -116,10 +116,10 @@ struct HistoryView: View {
     let onBack: () -> Void
 
     let historyItems: [(date: String, dist: String, time: String, sync: String)] = [
-        ("6月15日", "2.1km", "11:24", "87%"),
-        ("6月12日", "5.0km", "26:40", "92%"),
-        ("6月08日", "3.4km", "18:15", "79%"),
-        ("6月03日", "2.1km", "11:55", "84%"),
+        ("6月15日", "2.1km", "00:11:24", "87%"),
+        ("6月12日", "5.0km", "00:26:40", "92%"),
+        ("6月08日", "3.4km", "00:18:15", "79%"),
+        ("6月03日", "2.1km", "00:11:55", "84%"),
     ]
 
     var body: some View {
