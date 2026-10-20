@@ -45,6 +45,8 @@ enum AppStrings {
     }
 
     enum Onboarding {
+        static let close: LocalizedStringKey = "onboarding.close"
+        static let done: LocalizedStringKey = "onboarding.done"
         static let connectEyebrow: LocalizedStringKey = "onboarding.connect.eyebrow"
         static let connectTitle: LocalizedStringKey = "onboarding.connect.title"
         static let connectedStatus: LocalizedStringKey = "onboarding.connect.status.connected"

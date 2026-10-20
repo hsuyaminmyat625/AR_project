@@ -112,6 +112,7 @@ struct ConnectView: View {
 struct OnboardingView: View {
     let onNext: () -> Void
     let onBack: () -> Void
+    var isReview = false
     @State private var page = 0
 
     let pages: [(eyebrow: LocalizedStringKey, title: LocalizedStringKey, body: LocalizedStringKey)] = [
@@ -192,7 +193,7 @@ struct OnboardingView: View {
 
                 Spacer()
 
-                ARButton(page < pages.count - 1 ? AppStrings.Common.next : AppStrings.Onboarding.start, icon: "arrow.right") {
+                ARButton(page < pages.count - 1 ? AppStrings.Common.next : (isReview ? AppStrings.Onboarding.done : AppStrings.Onboarding.start), icon: "arrow.right") {
                     if page < pages.count - 1 {
                         withAnimation { page += 1 }
                     } else {
@@ -201,6 +202,16 @@ struct OnboardingView: View {
                 }
                 .padding(.horizontal, 24)
                 .padding(.bottom, 52)
+            }
+            .overlay(alignment: .topTrailing) {
+                if isReview {
+                    Button(AppStrings.Onboarding.close, action: onBack)
+                        .foregroundStyle(Color.arYellow)
+                        .padding(12)
+                        .background(Color.arCard, in: Capsule())
+                        .padding(.horizontal, 24)
+                        .padding(.top, 8)
+                }
             }
         }
     }

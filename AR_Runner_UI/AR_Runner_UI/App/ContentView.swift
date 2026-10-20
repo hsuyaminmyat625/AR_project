@@ -22,7 +22,7 @@ struct ContentView: View {
 
     private func completeOnboarding() {
         UserDefaults.standard.set(true, forKey: Self.onboardingCompletionKey)
-        screen = .home
+        screen = BodyInfoStore.shared.hasCompletedInitialSetup ? .home : .bodyInfo
     }
 
     var body: some View {
@@ -34,8 +34,15 @@ struct ContentView: View {
             // 1. Three-page tutorial
             case .onboarding:
                 OnboardingView(
-                    onNext: { screen = BodyInfoStore.shared.hasCompletedInitialSetup ? .home : .bodyInfo },
+                    onNext: completeOnboarding,
                     onBack: { }
+                )
+
+            case .tutorialReview:
+                OnboardingView(
+                    onNext: { screen = .phoneSettings },
+                    onBack: { screen = .phoneSettings },
+                    isReview: true
                 )
 
             // add on
@@ -108,7 +115,7 @@ struct ContentView: View {
                 PhoneSettingsView(
                     onBack: { screen = .home },
                     onEditBodyInfo: { screen = .bodyInfoEdit },
-                    onShowTutorial: { screen = .onboarding }
+                    onShowTutorial: { screen = .tutorialReview }
                 )
                 
             case .bodyInfo:

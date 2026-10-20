@@ -1,6 +1,20 @@
 {
   "sourceLanguage" : "ja",
   "strings" : {
+    "onboarding.close" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Close" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "閉じる" } }
+      }
+    },
+    "onboarding.done" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Done" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "完了" } }
+      }
+    },
     "" : {
 
     },

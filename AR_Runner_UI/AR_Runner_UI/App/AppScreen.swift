@@ -7,6 +7,7 @@
 
 enum AppScreen {
     case onboarding
+    case tutorialReview
     case home
     case deviceConnect
     case runningSettings
